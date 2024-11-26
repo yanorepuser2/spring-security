@@ -10,7 +10,7 @@ jobs:
   merge-dependabot-pr:
     name: Merge Dependabot PR
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'spring-projects/spring-security' }}
+    if: github.actor == 'dependabot[bot]'
     steps:
 
       - uses: actions/checkout@v4
